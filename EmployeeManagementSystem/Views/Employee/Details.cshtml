@@ -1,0 +1,36 @@
+﻿@model EmployeeManagementSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Employee Profile</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 fw-bold text-muted">ID:</dt>
+                        <dd class="col-sm-8">@Model.Id</dd>
+
+                        <dt class="col-sm-4 fw-bold text-muted">Full Name:</dt>
+                        <dd class="col-sm-8 fw-bold text-dark">@Model.Name</dd>
+
+                        <dt class="col-sm-4 fw-bold text-muted">Email:</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4 fw-bold text-muted">Designation:</dt>
+                        <dd class="col-sm-8"><span class="badge bg-secondary">@Model.Designation</span></dd>
+                    </dl>
+                </div>
+                <div class="card-footer bg-light d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
